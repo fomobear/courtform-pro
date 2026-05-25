@@ -9,8 +9,13 @@
     <meta property="og:description" content="Stay dry. Stay clean. Stay in the game.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://courtform.harrysontech.xyz">
+    <meta property="og:image" content="https://courtform.harrysontech.xyz/images/07-og-social.jpg">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content="https://courtform.harrysontech.xyz/images/07-og-social.jpg">
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="icon" type="image/png" href="/images/08-favicon.png">
+    <link rel="apple-touch-icon" href="/images/08-favicon.png">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800;900&family=Noto+Sans+TC:wght@400;500;700;900&display=swap" rel="stylesheet">
     <script>
         tailwind.config = {
@@ -142,21 +147,8 @@
                 </div>
 
                 <div class="lg:col-span-6 relative">
-                    <div class="aspect-[4/5] product-shot rounded-2xl border border-white/10 shadow-2xl overflow-hidden relative group float-anim">
-                        <div class="absolute inset-0 flex flex-col items-center justify-center p-8 text-center">
-                            <div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1626224583764-f87db24ac4ea?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80')] bg-cover bg-center opacity-30"></div>
-                            <div class="relative z-10 p-6 border-2 border-dashed border-brand-lime/50 rounded-xl bg-brand-dark/80 backdrop-blur-sm max-w-sm">
-                                <i class="fa-solid fa-camera-retro text-5xl text-brand-lime mb-4"></i>
-                                <p class="text-white font-bold text-lg" data-i18n-en>Hero Product Shot</p>
-                                <p class="text-white font-bold text-lg" data-i18n-zh>產品主視覺</p>
-                                <p class="text-sm text-slate-400 mt-2 leading-relaxed">
-                                    <span data-i18n-en><strong class="text-brand-lime">Suggested content</strong>: Courtform Pro towel magnetically attached to a pickleball court fence, Lime Pop color, early morning + dramatic backlight, ball and paddle on ground</span>
-                                    <span data-i18n-zh><strong class="text-brand-lime">建議內容</strong>：Courtform Pro 毛巾透過內建磁鐵掛在 Pickleball 球場鐵網上，主色 Lime Pop，環境清晨球場 + 微光，球拍與球散落地面</span>
-                                </p>
-                                <p class="text-xs text-slate-500 mt-3" data-i18n-en>1200×1500 px · DOF + dramatic light</p>
-                                <p class="text-xs text-slate-500 mt-3" data-i18n-zh>尺寸：1200×1500 px · 景深 + 戲劇光</p>
-                            </div>
-                        </div>
+                    <div class="aspect-[4/5] rounded-2xl border border-white/10 shadow-2xl overflow-hidden relative group float-anim">
+                        <img src="/images/01-hero.jpg" alt="Courtform Pro lime green sweat towel magnetically attached to pickleball court fence at golden hour" class="w-full h-full object-cover">
                     </div>
                     <div class="absolute -bottom-6 -left-6 bg-brand-navy p-4 rounded-xl border border-white/10 shadow-xl flex items-center gap-4">
                         <div class="w-12 h-12 rounded-full bg-brand-lime/20 flex items-center justify-center text-brand-lime">
@@ -219,15 +211,17 @@
                 <p class="text-slate-400"><span data-i18n-en>Watch how Courtform Pro changes your courtside experience</span><span data-i18n-zh>觀看 Courtform Pro 如何改變你的球場體驗</span></p>
             </div>
 
-            <div id="video-frame" class="max-w-5xl mx-auto rounded-2xl overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.5)] border border-white/10 relative aspect-video bg-slate-800 flex items-center justify-center group cursor-pointer">
-                <div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1622316447879-11c1b1836a9a?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80')] bg-cover bg-center opacity-40 group-hover:opacity-30 transition-opacity"></div>
-                <div class="relative z-10 w-24 h-24 bg-brand-lime rounded-full flex items-center justify-center shadow-lg shadow-brand-lime/30 group-hover:scale-110 transition-transform duration-300">
-                    <i class="fa-solid fa-play text-brand-dark text-3xl ml-2"></i>
+            <div id="video-frame" class="max-w-5xl mx-auto rounded-2xl overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.5)] border border-white/10 relative aspect-video bg-slate-800 group cursor-pointer">
+                <img src="/images/02-video-thumb.jpg" alt="Pickleball players at sunset with Courtform Pro towels" class="absolute inset-0 w-full h-full object-cover opacity-70 group-hover:opacity-90 transition-opacity">
+                <div class="absolute inset-0 flex items-center justify-center">
+                    <div class="relative z-10 w-24 h-24 bg-brand-lime rounded-full flex items-center justify-center shadow-lg shadow-brand-lime/30 group-hover:scale-110 transition-transform duration-300">
+                        <i class="fa-solid fa-play text-brand-dark text-3xl ml-2"></i>
+                    </div>
                 </div>
-                <div class="absolute bottom-8 left-8 right-8 text-center relative z-10">
+                <div class="absolute bottom-8 left-8 right-8 text-center z-10">
                     <p class="text-white font-bold text-lg bg-black/50 inline-block px-4 py-2 rounded-lg backdrop-blur-sm border border-white/10">
-                        <span data-i18n-en>Ad Video Placeholder (YouTube / Vimeo embed)</span>
-                        <span data-i18n-zh>廣告影片放置欄位（YouTube / Vimeo 嵌入）</span>
+                        <span data-i18n-en>Click to play ad video</span>
+                        <span data-i18n-zh>點擊播放廣告影片</span>
                     </p>
                 </div>
             </div>
@@ -318,35 +312,14 @@
                 <h3 class="text-4xl md:text-5xl font-black text-white"><span data-i18n-en>Every Moment on Court</span><span data-i18n-zh>場上每一刻</span></h3>
             </div>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                <div class="aspect-[3/4] product-shot rounded-2xl border border-white/10 overflow-hidden relative group">
-                    <div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1626224583764-f87db24ac4ea?ixlib=rb-4.0.3&auto=format&fit=crop&w=900&q=80')] bg-cover bg-center opacity-40"></div>
-                    <div class="absolute inset-0 flex items-end p-6">
-                        <div class="bg-brand-dark/90 backdrop-blur-sm border-2 border-dashed border-brand-lime/50 rounded-xl p-5 w-full">
-                            <p class="text-brand-lime font-bold text-sm mb-1"><i class="fa-solid fa-camera"></i> <span data-i18n-en>Shot 1</span><span data-i18n-zh>情境照 1</span></p>
-                            <p class="text-white font-bold"><span data-i18n-en>Magnet snap on fence (close-up)</span><span data-i18n-zh>磁吸掛在鐵網（特寫）</span></p>
-                            <p class="text-xs text-slate-400 mt-2"><span data-i18n-en>Towel magnetically attached to court fence, Lime Pop color. Blurred court and players in background.</span><span data-i18n-zh>毛巾透過內建磁鐵吸附在球場鐵網上，毛巾色 Lime Pop。背景模糊球場 + 球員身影。</span></p>
-                        </div>
-                    </div>
+                <div class="aspect-[3/4] rounded-2xl border border-white/10 overflow-hidden relative group">
+                    <img src="/images/03-shot-magnet-fence.jpg" alt="Courtform Pro towel close-up on chain-link fence with C logo magnetic attachment" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
                 </div>
-                <div class="aspect-[3/4] product-shot rounded-2xl border border-white/10 overflow-hidden relative group">
-                    <div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1659537020293-bb5dafef9fef?ixlib=rb-4.0.3&auto=format&fit=crop&w=900&q=80')] bg-cover bg-center opacity-40"></div>
-                    <div class="absolute inset-0 flex items-end p-6">
-                        <div class="bg-brand-dark/90 backdrop-blur-sm border-2 border-dashed border-brand-lime/50 rounded-xl p-5 w-full">
-                            <p class="text-brand-lime font-bold text-sm mb-1"><i class="fa-solid fa-camera"></i> <span data-i18n-en>Shot 2</span><span data-i18n-zh>情境照 2</span></p>
-                            <p class="text-white font-bold"><span data-i18n-en>Player drying palm (portrait)</span><span data-i18n-zh>球員握毛巾擦汗（人像）</span></p>
-                            <p class="text-xs text-slate-400 mt-2"><span data-i18n-en>Player wipes palm with palm-dry corner during timeout. Logo and fabric texture visible. Golden hour outdoor light.</span><span data-i18n-zh>球員在 timeout 用毛巾防滑手感區擦掌心，露出 LOGO 與材質紋路。金色 hour 戶外光。</span></p>
-                        </div>
-                    </div>
+                <div class="aspect-[3/4] rounded-2xl border border-white/10 overflow-hidden relative group">
+                    <img src="/images/04-shot-player-palm.jpg" alt="Pickleball player drying palm with Courtform Pro towel at golden hour" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
                 </div>
-                <div class="aspect-[3/4] product-shot rounded-2xl border border-white/10 overflow-hidden relative group">
-                    <div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1517649763962-0c623066013b?ixlib=rb-4.0.3&auto=format&fit=crop&w=900&q=80')] bg-cover bg-center opacity-40"></div>
-                    <div class="absolute inset-0 flex items-end p-6">
-                        <div class="bg-brand-dark/90 backdrop-blur-sm border-2 border-dashed border-brand-lime/50 rounded-xl p-5 w-full">
-                            <p class="text-brand-lime font-bold text-sm mb-1"><i class="fa-solid fa-camera"></i> <span data-i18n-en>Shot 3</span><span data-i18n-zh>情境照 3</span></p>
-                            <p class="text-white font-bold"><span data-i18n-en>Pouch + bag flat-lay (overhead)</span><span data-i18n-zh>收納袋 + 球包配置（俯拍）</span></p>
-                            <p class="text-xs text-slate-400 mt-2"><span data-i18n-en>Towel, pouch, paddle, ball, water bottle in overhead flat-lay. Dry scene, dark wood-grain background.</span><span data-i18n-zh>毛巾、收納袋、球拍、球、水壺平鋪俯拍。乾燥場景，深色木紋桌面。</span></p>
-                        </div>
-                    </div>
+                <div class="aspect-[3/4] rounded-2xl border border-white/10 overflow-hidden relative group">
+                    <img src="/images/05-shot-flatlay-pouch.jpg" alt="Flat-lay of Courtform Pro towel, wet pouch, paddle, ball and water bottle" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
                 </div>
             </div>
         </div>
@@ -405,14 +378,8 @@
                             <p class="text-xs text-slate-500"><span data-i18n-en>Stealth</span><span data-i18n-zh>石墨灰</span></p>
                         </div>
                     </div>
-                    <div class="mt-8 aspect-[3/2] product-shot rounded-2xl border border-white/10 overflow-hidden relative">
-                        <div class="absolute inset-0 flex items-center justify-center p-6">
-                            <div class="bg-brand-dark/80 backdrop-blur-sm border-2 border-dashed border-brand-lime/50 rounded-xl p-5 max-w-md text-center">
-                                <i class="fa-solid fa-palette text-3xl text-brand-lime mb-2"></i>
-                                <p class="text-white font-bold"><span data-i18n-en>4-Color Lineup Flat-Lay</span><span data-i18n-zh>4 色 Lineup 平拍</span></p>
-                                <p class="text-xs text-slate-400 mt-2"><span data-i18n-en>4 towels in overhead flat-lay. Dark wood-grain background. Each color labeled. 1600×1067 px.</span><span data-i18n-zh>4 色毛巾平鋪排列俯拍。深色木紋。每色標籤標示色名。1600×1067 px。</span></p>
-                            </div>
-                        </div>
+                    <div class="mt-8 aspect-[3/2] rounded-2xl border border-white/10 overflow-hidden relative">
+                        <img src="/images/06-color-lineup.jpg" alt="Courtform Pro 4 color lineup: Lime Pop, Coral Pop, Ocean Blue, Graphite" class="w-full h-full object-cover">
                     </div>
                 </div>
             </div>
