@@ -211,25 +211,22 @@
                 <p class="text-slate-400"><span data-i18n-en>Watch how Courtform Pro changes your courtside experience</span><span data-i18n-zh>觀看 Courtform Pro 如何改變你的球場體驗</span></p>
             </div>
 
-            <div id="video-frame" class="max-w-5xl mx-auto rounded-2xl overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.5)] border border-white/10 relative aspect-video bg-slate-800 group cursor-pointer">
-                <img src="/images/02-video-thumb.jpg" alt="Pickleball players at sunset with Courtform Pro towels" class="absolute inset-0 w-full h-full object-cover opacity-70 group-hover:opacity-90 transition-opacity">
-                <div class="absolute inset-0 flex items-center justify-center">
-                    <div class="relative z-10 w-24 h-24 bg-brand-lime rounded-full flex items-center justify-center shadow-lg shadow-brand-lime/30 group-hover:scale-110 transition-transform duration-300">
-                        <i class="fa-solid fa-play text-brand-dark text-3xl ml-2"></i>
-                    </div>
-                </div>
-                <div class="absolute bottom-8 left-8 right-8 text-center z-10">
-                    <p class="text-white font-bold text-lg bg-black/50 inline-block px-4 py-2 rounded-lg backdrop-blur-sm border border-white/10">
-                        <span data-i18n-en>Click to play ad video</span>
-                        <span data-i18n-zh>點擊播放廣告影片</span>
-                    </p>
-                </div>
+            <div class="max-w-5xl mx-auto rounded-2xl overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.5)] border border-white/10 relative aspect-video bg-slate-800">
+                <video
+                    controls
+                    autoplay
+                    muted
+                    loop
+                    playsinline
+                    poster="/images/02-video-thumb.jpg"
+                    class="absolute inset-0 w-full h-full object-cover"
+                    preload="metadata">
+                    <source src="/videos/courtform-pro-demo.mp4" type="video/mp4">
+                    <span data-i18n-en>Your browser doesn't support HTML5 video.</span>
+                    <span data-i18n-zh>您的瀏覽器不支援 HTML5 影片。</span>
+                </video>
             </div>
-            <p class="text-center text-xs text-slate-500 mt-4 max-w-2xl mx-auto">
-                <i class="fa-solid fa-info-circle"></i>
-                <span data-i18n-en>Replace with real video: swap <code class="text-brand-lime">#video-frame</code> div with <code class="text-brand-lime">&lt;iframe src="https://www.youtube.com/embed/VIDEO_ID" allowfullscreen&gt;&lt;/iframe&gt;</code></span>
-                <span data-i18n-zh>替換實際影片：將 <code class="text-brand-lime">#video-frame</code> div 替換為 <code class="text-brand-lime">&lt;iframe src="https://www.youtube.com/embed/VIDEO_ID" allowfullscreen&gt;&lt;/iframe&gt;</code></span>
-            </p>
+            
         </div>
     </section>
 
@@ -342,15 +339,15 @@
                                         <rect width="5" height="5" fill="#f1f5f9"/>
                                         <circle cx="2.5" cy="2.5" r="0.8" fill="#cbd5e1"/>
                                     </pattern>
-                                    <pattern id="lime-waffle" x="0" y="0" width="5" height="5" patternUnits="userSpaceOnUse">
-                                        <rect width="5" height="5" fill="#d4ed31"/>
-                                        <circle cx="2.5" cy="2.5" r="0.8" fill="#a3c423"/>
+                                    <pattern id="color-waffle" x="0" y="0" width="5" height="5" patternUnits="userSpaceOnUse">
+                                        <rect width="5" height="5" fill="#d4ed31" id="towel-color-bg"/>
+                                        <circle cx="2.5" cy="2.5" r="0.8" fill="#a3c423" id="towel-color-dot"/>
                                     </pattern>
                                 </defs>
                                 <!-- 白底主體（佔大部分） -->
                                 <rect x="8" y="8" width="144" height="224" rx="3" fill="url(#waffle)" />
-                                <!-- lime 小三角（右下角，只佔約 1/4 面積） -->
-                                <polygon points="8,232 152,232 152,150 60,232" fill="url(#lime-waffle)" />
+                                <!-- 彩色小三角（右下角） -->
+                                <polygon points="8,232 152,232 152,150 60,232" fill="url(#color-waffle)" />
                                 <!-- COURTFORM 文字（右下 lime 區內） -->
                                 <text x="146" y="222" fill="#0f172a" font-family="Inter, sans-serif" font-weight="900" font-size="8" text-anchor="end">COURTFORM</text>
                                 <!-- C 標籤（頂端磁吸位置） -->
@@ -384,23 +381,23 @@
                 <div class="lg:w-1/2">
                     <h3 class="text-3xl font-bold text-white mb-8"><span data-i18n-en>Pick your court color</span><span data-i18n-zh>選擇你的戰鬥色彩</span></h3>
                     <div class="grid grid-cols-2 sm:grid-cols-4 gap-6">
-                        <div class="text-center">
-                            <div class="w-16 h-16 rounded-full mx-auto bg-brand-lime border-4 border-brand-dark shadow-[0_0_0_2px_rgba(255,255,255,0.2)] mb-3"></div>
+                        <div class="text-center cursor-pointer group" onclick="setTowelColor('#d4ed31', '#a3c423', this)" data-color="lime">
+                            <div class="w-16 h-16 rounded-full mx-auto bg-brand-lime border-4 border-brand-dark shadow-[0_0_0_2px_rgba(255,255,255,0.2)] mb-3 group-hover:scale-110 transition-transform"></div>
                             <p class="text-sm font-bold text-white">LIME POP</p>
                             <p class="text-xs text-slate-500"><span data-i18n-en>Signature</span><span data-i18n-zh>萊姆綠</span></p>
                         </div>
-                        <div class="text-center">
-                            <div class="w-16 h-16 rounded-full mx-auto bg-brand-coral border-4 border-brand-dark shadow-[0_0_0_2px_rgba(255,255,255,0.2)] mb-3"></div>
+                        <div class="text-center cursor-pointer group" onclick="setTowelColor('#ff7b7b', '#c95252', this)" data-color="coral">
+                            <div class="w-16 h-16 rounded-full mx-auto bg-brand-coral border-4 border-brand-dark shadow-[0_0_0_2px_rgba(255,255,255,0.2)] mb-3 group-hover:scale-110 transition-transform"></div>
                             <p class="text-sm font-bold text-white">CORAL POP</p>
                             <p class="text-xs text-slate-500"><span data-i18n-en>Bold</span><span data-i18n-zh>珊瑚紅</span></p>
                         </div>
-                        <div class="text-center">
-                            <div class="w-16 h-16 rounded-full mx-auto bg-brand-ocean border-4 border-brand-dark shadow-[0_0_0_2px_rgba(255,255,255,0.2)] mb-3"></div>
+                        <div class="text-center cursor-pointer group" onclick="setTowelColor('#3b82f6', '#1e40af', this)" data-color="ocean">
+                            <div class="w-16 h-16 rounded-full mx-auto bg-brand-ocean border-4 border-brand-dark shadow-[0_0_0_2px_rgba(255,255,255,0.2)] mb-3 group-hover:scale-110 transition-transform"></div>
                             <p class="text-sm font-bold text-white">OCEAN BLUE</p>
                             <p class="text-xs text-slate-500"><span data-i18n-en>Classic</span><span data-i18n-zh>海洋藍</span></p>
                         </div>
-                        <div class="text-center">
-                            <div class="w-16 h-16 rounded-full mx-auto bg-brand-graphite border-4 border-brand-dark shadow-[0_0_0_2px_rgba(255,255,255,0.2)] mb-3"></div>
+                        <div class="text-center cursor-pointer group" onclick="setTowelColor('#475569', '#1e293b', this)" data-color="graphite">
+                            <div class="w-16 h-16 rounded-full mx-auto bg-brand-graphite border-4 border-brand-dark shadow-[0_0_0_2px_rgba(255,255,255,0.2)] mb-3 group-hover:scale-110 transition-transform"></div>
                             <p class="text-sm font-bold text-white">GRAPHITE</p>
                             <p class="text-xs text-slate-500"><span data-i18n-en>Stealth</span><span data-i18n-zh>石墨灰</span></p>
                         </div>
@@ -561,6 +558,18 @@
     </footer>
 
     <script>
+        function setTowelColor(bg, dot, btn) {
+            const bgEl = document.getElementById('towel-color-bg');
+            const dotEl = document.getElementById('towel-color-dot');
+            if (bgEl) bgEl.setAttribute('fill', bg);
+            if (dotEl) dotEl.setAttribute('fill', dot);
+            // active state
+            document.querySelectorAll('[data-color]').forEach(el => el.classList.remove('opacity-100', 'scale-105'));
+            document.querySelectorAll('[data-color]').forEach(el => el.classList.add('opacity-70'));
+            btn.classList.remove('opacity-70');
+            btn.classList.add('opacity-100', 'scale-105');
+        }
+
         function setLang(lang) {
             document.documentElement.lang = lang;
             localStorage.setItem('lang', lang);
