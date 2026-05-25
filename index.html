@@ -1,17 +1,17 @@
 <!DOCTYPE html>
-<html lang="zh-TW">
+<html lang="en" data-theme="dark">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Courtform Pro | 專為 Pickleball 打造的磁吸運動毛巾 | Kickstarter</title>
-    <meta name="description" content="Courtform Pro Magnetic Sweat Towel — 為認真打球的人而生。隱藏式磁吸、加大吸汗區、防滑手感、專屬濕巾袋。Kickstarter 早鳥 50% 限量優惠。">
-    <meta property="og:title" content="Courtform Pro | 專為 Pickleball 打造的磁吸運動毛巾">
+    <title>Courtform Pro | Magnetic Sweat Towel for Pickleball | Kickstarter</title>
+    <meta name="description" content="Courtform Pro Magnetic Sweat Towel — Built for serious pickleball players. Hidden magnet, oversized dry zone, palm-grip corner, wet pouch. Kickstarter 50% Early Bird limited.">
+    <meta property="og:title" content="Courtform Pro | Magnetic Sweat Towel for Pickleball">
     <meta property="og:description" content="Stay dry. Stay clean. Stay in the game.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://courtform.harrysontech.xyz">
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=Noto+Sans+TC:wght@400;500;700;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800;900&family=Noto+Sans+TC:wght@400;500;700;900&display=swap" rel="stylesheet">
     <script>
         tailwind.config = {
             theme: {
@@ -19,12 +19,8 @@
                     fontFamily: { sans: ['Inter', 'Noto Sans TC', 'sans-serif'] },
                     colors: {
                         brand: {
-                            dark: '#0f172a',
-                            navy: '#1e293b',
-                            lime: '#d4ed31',
-                            coral: '#ff7b7b',
-                            ocean: '#3b82f6',
-                            graphite: '#475569'
+                            dark: '#0f172a', navy: '#1e293b', lime: '#d4ed31',
+                            coral: '#ff7b7b', ocean: '#3b82f6', graphite: '#475569'
                         }
                     }
                 }
@@ -40,17 +36,12 @@
         .faq-icon { transition: transform 0.3s; }
         @keyframes float-slow { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-15px); } }
         .float-anim { animation: float-slow 6s ease-in-out infinite; }
-        .product-shot {
-            background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
-            position: relative;
-        }
-        .product-shot::after {
-            content: '';
-            position: absolute;
-            inset: 0;
-            background: radial-gradient(circle at 30% 30%, rgba(212,237,49,0.15), transparent 60%);
-            pointer-events: none;
-        }
+        .product-shot { background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%); position: relative; }
+        .product-shot::after { content: ''; position: absolute; inset: 0; background: radial-gradient(circle at 30% 30%, rgba(212,237,49,0.15), transparent 60%); pointer-events: none; }
+        [data-i18n-zh], [data-i18n-en] { transition: opacity 0.2s; }
+        html[lang="en"] [data-i18n-zh] { display: none; }
+        html[lang="zh-TW"] [data-i18n-en] { display: none; }
+        .lang-btn.active { background: #d4ed31; color: #0f172a; }
     </style>
 </head>
 <body class="bg-brand-dark text-slate-200 font-sans antialiased selection:bg-brand-lime selection:text-brand-dark">
@@ -63,33 +54,51 @@
                         <i class="fa-solid fa-c text-brand-lime"></i> COURTFORM <span class="bg-white text-brand-dark text-xs px-2 py-0.5 rounded-sm">PRO</span>
                     </span>
                 </div>
-                <div class="hidden md:flex space-x-8 items-center">
-                    <a href="#about" class="text-sm font-medium hover:text-brand-lime transition-colors">產品理念</a>
-                    <a href="#video" class="text-sm font-medium hover:text-brand-lime transition-colors">廣告影片</a>
-                    <a href="#features" class="text-sm font-medium hover:text-brand-lime transition-colors">核心特色</a>
-                    <a href="#specs" class="text-sm font-medium hover:text-brand-lime transition-colors">規格與配色</a>
+                <div class="hidden md:flex space-x-6 items-center">
+                    <a href="#about" class="text-sm font-medium hover:text-brand-lime transition-colors">
+                        <span data-i18n-en>Story</span><span data-i18n-zh>產品理念</span>
+                    </a>
+                    <a href="#video" class="text-sm font-medium hover:text-brand-lime transition-colors">
+                        <span data-i18n-en>Video</span><span data-i18n-zh>廣告影片</span>
+                    </a>
+                    <a href="#features" class="text-sm font-medium hover:text-brand-lime transition-colors">
+                        <span data-i18n-en>Features</span><span data-i18n-zh>核心特色</span>
+                    </a>
+                    <a href="#specs" class="text-sm font-medium hover:text-brand-lime transition-colors">
+                        <span data-i18n-en>Specs</span><span data-i18n-zh>規格</span>
+                    </a>
                     <a href="#faq" class="text-sm font-medium hover:text-brand-lime transition-colors">FAQ</a>
-                    <a href="#kickstarter" class="bg-brand-lime text-brand-dark px-6 py-2 rounded-full font-bold text-sm hover:bg-white transition-all transform hover:scale-105 shadow-[0_0_15px_rgba(212,237,49,0.3)]">
-                        Kickstarter 即將上線
+                    <!-- Language switcher -->
+                    <div class="flex items-center gap-1 border border-white/10 rounded-full p-0.5">
+                        <button onclick="setLang('en')" class="lang-btn px-3 py-1 rounded-full text-xs font-bold active" data-lang="en">EN</button>
+                        <button onclick="setLang('zh-TW')" class="lang-btn px-3 py-1 rounded-full text-xs font-bold" data-lang="zh-TW">中</button>
+                    </div>
+                    <a href="#kickstarter" class="bg-brand-lime text-brand-dark px-5 py-2 rounded-full font-bold text-sm hover:bg-white transition-all transform hover:scale-105 shadow-[0_0_15px_rgba(212,237,49,0.3)]">
+                        <span data-i18n-en>Kickstarter</span><span data-i18n-zh>Kickstarter 預約</span>
                     </a>
                 </div>
-                <div class="md:hidden flex items-center">
+                <div class="md:hidden flex items-center gap-2">
+                    <div class="flex items-center gap-1 border border-white/10 rounded-full p-0.5">
+                        <button onclick="setLang('en')" class="lang-btn px-2 py-1 rounded-full text-xs font-bold active" data-lang="en">EN</button>
+                        <button onclick="setLang('zh-TW')" class="lang-btn px-2 py-1 rounded-full text-xs font-bold" data-lang="zh-TW">中</button>
+                    </div>
                     <button onclick="document.getElementById('mobile-menu').classList.toggle('hidden')" class="text-white hover:text-brand-lime">
                         <i class="fa-solid fa-bars text-2xl"></i>
                     </button>
                 </div>
             </div>
             <div id="mobile-menu" class="hidden md:hidden border-t border-white/10 py-4 space-y-3">
-                <a href="#about" class="block text-sm font-medium hover:text-brand-lime">產品理念</a>
-                <a href="#video" class="block text-sm font-medium hover:text-brand-lime">廣告影片</a>
-                <a href="#features" class="block text-sm font-medium hover:text-brand-lime">核心特色</a>
-                <a href="#specs" class="block text-sm font-medium hover:text-brand-lime">規格與配色</a>
+                <a href="#about" class="block text-sm font-medium hover:text-brand-lime"><span data-i18n-en>Story</span><span data-i18n-zh>產品理念</span></a>
+                <a href="#video" class="block text-sm font-medium hover:text-brand-lime"><span data-i18n-en>Video</span><span data-i18n-zh>廣告影片</span></a>
+                <a href="#features" class="block text-sm font-medium hover:text-brand-lime"><span data-i18n-en>Features</span><span data-i18n-zh>核心特色</span></a>
+                <a href="#specs" class="block text-sm font-medium hover:text-brand-lime"><span data-i18n-en>Specs</span><span data-i18n-zh>規格</span></a>
                 <a href="#faq" class="block text-sm font-medium hover:text-brand-lime">FAQ</a>
-                <a href="#kickstarter" class="block bg-brand-lime text-brand-dark px-6 py-2 rounded-full font-bold text-sm text-center">Kickstarter 預約</a>
+                <a href="#kickstarter" class="block bg-brand-lime text-brand-dark px-6 py-2 rounded-full font-bold text-sm text-center">Kickstarter</a>
             </div>
         </div>
     </nav>
 
+    <!-- HERO -->
     <section class="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden clip-diagonal bg-gradient-to-b from-brand-dark to-brand-navy">
         <div class="absolute top-1/4 right-0 w-96 h-96 bg-brand-lime/10 rounded-full blur-3xl -z-10"></div>
         <div class="absolute bottom-0 left-0 w-1/2 h-1/2 bg-blue-500/10 rounded-full blur-3xl -z-10"></div>
@@ -98,31 +107,37 @@
             <div class="lg:grid lg:grid-cols-12 lg:gap-16 items-center">
                 <div class="lg:col-span-6 text-center lg:text-left mb-16 lg:mb-0">
                     <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/10 border border-white/20 text-brand-lime text-xs font-bold tracking-wider mb-6">
-                        <i class="fa-brands fa-kickstarter text-base"></i> KICKSTARTER 預熱中 · 早鳥 50% 限量
+                        <i class="fa-brands fa-kickstarter text-base"></i>
+                        <span data-i18n-en>KICKSTARTER COMING SOON · 50% EARLY BIRD</span>
+                        <span data-i18n-zh>KICKSTARTER 預熱中 · 早鳥 50% 限量</span>
                     </div>
                     <h1 class="text-5xl md:text-6xl lg:text-7xl font-black text-white leading-tight mb-6">
-                        STAY DRY.<br>
-                        STAY CLEAN.<br>
+                        STAY DRY.<br>STAY CLEAN.<br>
                         <span class="text-brand-lime">STAY IN THE GAME.</span>
                     </h1>
                     <p class="text-xl md:text-2xl text-slate-300 font-medium mb-8 leading-relaxed">
-                        專為 Pickleball 玩家打造的<br class="hidden md:block">頂級磁吸運動毛巾。
+                        <span data-i18n-en>The premium magnetic sweat towel<br class="hidden md:block">built for pickleball players.</span>
+                        <span data-i18n-zh>專為 Pickleball 玩家打造的<br class="hidden md:block">頂級磁吸運動毛巾。</span>
                     </p>
 
                     <div class="bg-brand-navy/50 border border-white/10 p-6 rounded-2xl mb-8 backdrop-blur-sm">
-                        <p class="text-slate-200 font-medium mb-4">輸入 Email 獲取 Kickstarter <span class="text-brand-lime font-bold">50% 早鳥優惠</span> 通知</p>
+                        <p class="text-slate-200 font-medium mb-4">
+                            <span data-i18n-en>Enter your email for Kickstarter <span class="text-brand-lime font-bold">50% Early Bird</span> notification</span>
+                            <span data-i18n-zh>輸入 Email 獲取 Kickstarter <span class="text-brand-lime font-bold">50% 早鳥優惠</span> 通知</span>
+                        </p>
                         <form class="flex flex-col sm:flex-row gap-3" data-form="hero">
-                            <input type="email" placeholder="您的電子郵件" required class="flex-1 bg-brand-dark border border-slate-600 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-brand-lime focus:ring-1 focus:ring-brand-lime transition-colors">
+                            <input type="email" required class="flex-1 bg-brand-dark border border-slate-600 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-brand-lime focus:ring-1 focus:ring-brand-lime transition-colors" data-i18n-placeholder-en="Your email address" data-i18n-placeholder-zh="您的電子郵件">
                             <button type="submit" class="bg-brand-lime text-brand-dark font-bold px-8 py-3 rounded-lg hover:bg-white transition-colors flex items-center justify-center gap-2">
-                                獲取通知 <i class="fa-solid fa-arrow-right"></i>
+                                <span data-i18n-en>Notify Me</span><span data-i18n-zh>獲取通知</span>
+                                <i class="fa-solid fa-arrow-right"></i>
                             </button>
                         </form>
                     </div>
 
                     <div class="flex items-center justify-center lg:justify-start gap-6 text-sm text-slate-400 font-medium flex-wrap">
-                        <span class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-lime"></i> 俱樂部玩家</span>
-                        <span class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-lime"></i> 錦標賽</span>
-                        <span class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-lime"></i> 旅行</span>
+                        <span class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-lime"></i> <span data-i18n-en>Club Players</span><span data-i18n-zh>俱樂部玩家</span></span>
+                        <span class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-lime"></i> <span data-i18n-en>Tournaments</span><span data-i18n-zh>錦標賽</span></span>
+                        <span class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-lime"></i> <span data-i18n-en>Travel</span><span data-i18n-zh>旅行</span></span>
                     </div>
                 </div>
 
@@ -132,11 +147,14 @@
                             <div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1626224583764-f87db24ac4ea?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80')] bg-cover bg-center opacity-30"></div>
                             <div class="relative z-10 p-6 border-2 border-dashed border-brand-lime/50 rounded-xl bg-brand-dark/80 backdrop-blur-sm max-w-sm">
                                 <i class="fa-solid fa-camera-retro text-5xl text-brand-lime mb-4"></i>
-                                <p class="text-white font-bold text-lg">產品主視覺</p>
+                                <p class="text-white font-bold text-lg" data-i18n-en>Hero Product Shot</p>
+                                <p class="text-white font-bold text-lg" data-i18n-zh>產品主視覺</p>
                                 <p class="text-sm text-slate-400 mt-2 leading-relaxed">
-                                    <strong class="text-brand-lime">建議內容</strong>：Courtform Pro 毛巾透過內建磁鐵掛在 Pickleball 球場鐵網上，主色 Lime Pop，環境是清晨球場 + 微光，球拍與球散落地面增加情境
+                                    <span data-i18n-en><strong class="text-brand-lime">Suggested content</strong>: Courtform Pro towel magnetically attached to a pickleball court fence, Lime Pop color, early morning + dramatic backlight, ball and paddle on ground</span>
+                                    <span data-i18n-zh><strong class="text-brand-lime">建議內容</strong>：Courtform Pro 毛巾透過內建磁鐵掛在 Pickleball 球場鐵網上，主色 Lime Pop，環境清晨球場 + 微光，球拍與球散落地面</span>
                                 </p>
-                                <p class="text-xs text-slate-500 mt-3">尺寸：1200×1500 px，景深 + 戲劇光</p>
+                                <p class="text-xs text-slate-500 mt-3" data-i18n-en>1200×1500 px · DOF + dramatic light</p>
+                                <p class="text-xs text-slate-500 mt-3" data-i18n-zh>尺寸：1200×1500 px · 景深 + 戲劇光</p>
                             </div>
                         </div>
                     </div>
@@ -145,8 +163,10 @@
                             <i class="fa-solid fa-magnet text-xl"></i>
                         </div>
                         <div>
-                            <p class="text-xs text-slate-400">核心專利</p>
-                            <p class="text-sm font-bold text-white">超強磁吸設計</p>
+                            <p class="text-xs text-slate-400" data-i18n-en>Core Innovation</p>
+                            <p class="text-xs text-slate-400" data-i18n-zh>核心設計</p>
+                            <p class="text-sm font-bold text-white" data-i18n-en>Hidden Magnet</p>
+                            <p class="text-sm font-bold text-white" data-i18n-zh>超強磁吸設計</p>
                         </div>
                     </div>
                 </div>
@@ -154,71 +174,78 @@
         </div>
     </section>
 
+    <!-- STATS -->
     <section class="bg-brand-navy border-y border-white/5 py-8">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
             <div>
                 <div class="text-3xl font-black text-brand-lime">3.5M+</div>
-                <div class="text-xs text-slate-400 mt-1 uppercase tracking-wider">全球 Pickleball 玩家</div>
+                <div class="text-xs text-slate-400 mt-1 uppercase tracking-wider"><span data-i18n-en>Global Pickleball Players</span><span data-i18n-zh>全球 Pickleball 玩家</span></div>
             </div>
             <div>
                 <div class="text-3xl font-black text-brand-lime">98%</div>
-                <div class="text-xs text-slate-400 mt-1 uppercase tracking-wider">玩家會帶毛巾上場</div>
+                <div class="text-xs text-slate-400 mt-1 uppercase tracking-wider"><span data-i18n-en>Players Bring a Towel</span><span data-i18n-zh>玩家會帶毛巾上場</span></div>
             </div>
             <div>
                 <div class="text-3xl font-black text-brand-lime">5+</div>
-                <div class="text-xs text-slate-400 mt-1 uppercase tracking-wider">專利設計</div>
+                <div class="text-xs text-slate-400 mt-1 uppercase tracking-wider"><span data-i18n-en>Smart Features</span><span data-i18n-zh>專屬設計</span></div>
             </div>
             <div>
-                <div class="text-3xl font-black text-brand-lime">365 天</div>
-                <div class="text-xs text-slate-400 mt-1 uppercase tracking-wider">品質保固</div>
+                <div class="text-3xl font-black text-brand-lime"><span data-i18n-en>365 Days</span><span data-i18n-zh>365 天</span></div>
+                <div class="text-xs text-slate-400 mt-1 uppercase tracking-wider"><span data-i18n-en>Quality Warranty</span><span data-i18n-zh>品質保固</span></div>
             </div>
         </div>
     </section>
 
+    <!-- STORY -->
     <section id="about" class="py-24 bg-brand-dark relative">
         <div class="max-w-4xl mx-auto px-4 text-center">
             <i class="fa-solid fa-quote-left text-4xl text-brand-lime/30 mb-6"></i>
             <h2 class="text-3xl md:text-4xl font-bold text-white mb-8 leading-snug">
-                當你站上球場，真正影響勝負的，<br class="hidden md:block">
-                不只是球拍，而是<span class="text-brand-lime">每一次出手前的狀態</span>。
+                <span data-i18n-en>When you step on the court, what really decides the win isn't just your paddle —<br class="hidden md:block">it's <span class="text-brand-lime">the state you're in before every swing</span>.</span>
+                <span data-i18n-zh>當你站上球場，真正影響勝負的，<br class="hidden md:block">不只是球拍，而是<span class="text-brand-lime">每一次出手前的狀態</span>。</span>
             </h2>
             <p class="text-lg text-slate-400 leading-relaxed max-w-3xl mx-auto mb-8">
-                Courtform Pro，為認真打球的人而生。<br>
-                它不是普通毛巾，而是一件讓你保持乾爽、乾淨、專注的場邊裝備。<br>
-                <strong class="text-white">不落地、不亂放、不狼狽。</strong>從熱身到賽末點，永遠在你最需要的位置。
+                <span data-i18n-en>Courtform Pro is built for players who take the game seriously.<br>It's not just a towel — it's a piece of courtside gear that keeps you dry, clean, and focused.<br><strong class="text-white">No dropping. No fumbling. No mess.</strong> From warmup to match point, it's always where you need it.</span>
+                <span data-i18n-zh>Courtform Pro，為認真打球的人而生。<br>它不是普通毛巾，而是一件讓你保持乾爽、乾淨、專注的場邊裝備。<br><strong class="text-white">不落地、不亂放、不狼狽。</strong>從熱身到賽末點，永遠在你最需要的位置。</span>
             </p>
         </div>
     </section>
 
+    <!-- VIDEO -->
     <section id="video" class="py-12 bg-brand-navy border-y border-white/5">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-12">
-                <h2 class="text-3xl font-black text-white mb-4">眼見為憑</h2>
-                <p class="text-slate-400">觀看 Courtform Pro 如何改變你的球場體驗</p>
+                <h2 class="text-3xl font-black text-white mb-4"><span data-i18n-en>See It in Action</span><span data-i18n-zh>眼見為憑</span></h2>
+                <p class="text-slate-400"><span data-i18n-en>Watch how Courtform Pro changes your courtside experience</span><span data-i18n-zh>觀看 Courtform Pro 如何改變你的球場體驗</span></p>
             </div>
 
             <div id="video-frame" class="max-w-5xl mx-auto rounded-2xl overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.5)] border border-white/10 relative aspect-video bg-slate-800 flex items-center justify-center group cursor-pointer">
                 <div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1622316447879-11c1b1836a9a?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80')] bg-cover bg-center opacity-40 group-hover:opacity-30 transition-opacity"></div>
-
                 <div class="relative z-10 w-24 h-24 bg-brand-lime rounded-full flex items-center justify-center shadow-lg shadow-brand-lime/30 group-hover:scale-110 transition-transform duration-300">
                     <i class="fa-solid fa-play text-brand-dark text-3xl ml-2"></i>
                 </div>
                 <div class="absolute bottom-8 left-8 right-8 text-center relative z-10">
-                    <p class="text-white font-bold text-lg bg-black/50 inline-block px-4 py-2 rounded-lg backdrop-blur-sm border border-white/10">廣告影片放置欄位（YouTube / Vimeo 嵌入）</p>
+                    <p class="text-white font-bold text-lg bg-black/50 inline-block px-4 py-2 rounded-lg backdrop-blur-sm border border-white/10">
+                        <span data-i18n-en>Ad Video Placeholder (YouTube / Vimeo embed)</span>
+                        <span data-i18n-zh>廣告影片放置欄位（YouTube / Vimeo 嵌入）</span>
+                    </p>
                 </div>
             </div>
             <p class="text-center text-xs text-slate-500 mt-4 max-w-2xl mx-auto">
-                <i class="fa-solid fa-info-circle"></i> 替換實際影片：將 <code class="text-brand-lime">#video-frame</code> div 替換為 <code class="text-brand-lime">&lt;iframe src="https://www.youtube.com/embed/VIDEO_ID" allowfullscreen&gt;&lt;/iframe&gt;</code>
+                <i class="fa-solid fa-info-circle"></i>
+                <span data-i18n-en>Replace with real video: swap <code class="text-brand-lime">#video-frame</code> div with <code class="text-brand-lime">&lt;iframe src="https://www.youtube.com/embed/VIDEO_ID" allowfullscreen&gt;&lt;/iframe&gt;</code></span>
+                <span data-i18n-zh>替換實際影片：將 <code class="text-brand-lime">#video-frame</code> div 替換為 <code class="text-brand-lime">&lt;iframe src="https://www.youtube.com/embed/VIDEO_ID" allowfullscreen&gt;&lt;/iframe&gt;</code></span>
             </p>
         </div>
     </section>
 
+    <!-- FEATURES -->
     <section id="features" class="py-24 bg-brand-dark">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-20">
                 <h2 class="text-sm font-bold text-brand-lime tracking-widest uppercase mb-3">BUILT FOR PERFORMANCE</h2>
-                <h3 class="text-4xl md:text-5xl font-black text-white">六大專屬設計</h3>
-                <p class="mt-4 text-slate-400 text-lg">每一個細節，都為了讓你在場上發揮極致。</p>
+                <h3 class="text-4xl md:text-5xl font-black text-white"><span data-i18n-en>Six Signature Features</span><span data-i18n-zh>六大專屬設計</span></h3>
+                <p class="mt-4 text-slate-400 text-lg"><span data-i18n-en>Every detail engineered to bring out your peak performance.</span><span data-i18n-zh>每一個細節，都為了讓你在場上發揮極致。</span></p>
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -226,77 +253,78 @@
                     <div class="w-14 h-14 bg-brand-dark rounded-xl flex items-center justify-center mb-6 group-hover:bg-brand-lime transition-colors">
                         <i class="fa-solid fa-magnet text-2xl text-slate-300 group-hover:text-brand-dark transition-colors"></i>
                     </div>
-                    <h4 class="text-xl font-bold text-white mb-3">隱藏式磁吸 <span class="text-sm font-normal text-brand-lime ml-2">Hidden Magnet</span></h4>
-                    <p class="text-slate-400 leading-relaxed">內建隱形強力磁鐵，穩穩吸附在球場鐵網、球車或長椅旁。保持毛巾乾淨，隨手可得。</p>
+                    <h4 class="text-xl font-bold text-white mb-3"><span data-i18n-en>Hidden Magnet</span><span data-i18n-zh>隱藏式磁吸</span></h4>
+                    <p class="text-slate-400 leading-relaxed"><span data-i18n-en>Built-in invisible heavy-duty magnet snaps onto court fences, ball carts, and benches. Keep your towel clean and within reach.</span><span data-i18n-zh>內建隱形強力磁鐵，穩穩吸附在球場鐵網、球車或長椅旁。保持毛巾乾淨，隨手可得。</span></p>
                 </div>
                 <div class="bg-brand-navy p-8 rounded-2xl border border-white/5 hover:border-brand-lime/50 transition-colors group">
                     <div class="w-14 h-14 bg-brand-dark rounded-xl flex items-center justify-center mb-6 group-hover:bg-brand-lime transition-colors">
                         <i class="fa-solid fa-droplet text-2xl text-slate-300 group-hover:text-brand-dark transition-colors"></i>
                     </div>
-                    <h4 class="text-xl font-bold text-white mb-3">加大吸汗區 <span class="text-sm font-normal text-brand-lime ml-2">Sweat-Dry Zone</span></h4>
-                    <p class="text-slate-400 leading-relaxed">更大、更柔軟的吸水面積。專為快速擦乾手汗設計，完美適用於雙手、臉部與頸部。</p>
+                    <h4 class="text-xl font-bold text-white mb-3"><span data-i18n-en>Oversized Sweat-Dry Zone</span><span data-i18n-zh>加大吸汗區</span></h4>
+                    <p class="text-slate-400 leading-relaxed"><span data-i18n-en>Larger, softer absorbent area. Engineered for fast hand-drying, perfect for hands, face, and neck.</span><span data-i18n-zh>更大、更柔軟的吸水面積。專為快速擦乾手汗設計，完美適用於雙手、臉部與頸部。</span></p>
                 </div>
                 <div class="bg-brand-navy p-8 rounded-2xl border border-white/5 hover:border-brand-lime/50 transition-colors group">
                     <div class="w-14 h-14 bg-brand-dark rounded-xl flex items-center justify-center mb-6 group-hover:bg-brand-lime transition-colors">
                         <i class="fa-solid fa-link text-2xl text-slate-300 group-hover:text-brand-dark transition-colors"></i>
                     </div>
-                    <h4 class="text-xl font-bold text-white mb-3">低調掛扣設計 <span class="text-sm font-normal text-brand-lime ml-2">Clip & Go</span></h4>
-                    <p class="text-slate-400 leading-relaxed">低調的掛環與扣環組合，可輕鬆扣在口袋、球包或腰帶上，移動無負擔。</p>
+                    <h4 class="text-xl font-bold text-white mb-3"><span data-i18n-en>Clip & Go</span><span data-i18n-zh>低調掛扣設計</span></h4>
+                    <p class="text-slate-400 leading-relaxed"><span data-i18n-en>Low-profile loop and clip combo clips onto your pocket, bag, or belt. Move freely between courts.</span><span data-i18n-zh>低調的掛環與扣環組合，可輕鬆扣在口袋、球包或腰帶上，移動無負擔。</span></p>
                 </div>
                 <div class="bg-brand-navy p-8 rounded-2xl border border-white/5 hover:border-brand-lime/50 transition-colors group">
                     <div class="w-14 h-14 bg-brand-dark rounded-xl flex items-center justify-center mb-6 group-hover:bg-brand-lime transition-colors">
                         <i class="fa-solid fa-hand-sparkles text-2xl text-slate-300 group-hover:text-brand-dark transition-colors"></i>
                     </div>
-                    <h4 class="text-xl font-bold text-white mb-3">防滑手感區 <span class="text-sm font-normal text-brand-lime ml-2">Palm-Dry Corner</span></h4>
-                    <p class="text-slate-400 leading-relaxed">高吸水超細纖維特製角落，在每一次發球得分前快速擦乾手部，給你更好的握感與控制。</p>
+                    <h4 class="text-xl font-bold text-white mb-3"><span data-i18n-en>Palm-Dry Corner</span><span data-i18n-zh>防滑手感區</span></h4>
+                    <p class="text-slate-400 leading-relaxed"><span data-i18n-en>High-absorbency microfiber corner instantly dries your palms before every serve. Better grip, better control.</span><span data-i18n-zh>高吸水超細纖維特製角落，在每一次發球得分前快速擦乾手部，給你更好的握感與控制。</span></p>
                 </div>
                 <div class="bg-brand-navy p-8 rounded-2xl border border-white/5 hover:border-brand-lime/50 transition-colors group">
                     <div class="w-14 h-14 bg-brand-dark rounded-xl flex items-center justify-center mb-6 group-hover:bg-brand-lime transition-colors">
                         <i class="fa-solid fa-bag-shopping text-2xl text-slate-300 group-hover:text-brand-dark transition-colors"></i>
                     </div>
-                    <h4 class="text-xl font-bold text-white mb-3">專屬濕巾收納袋 <span class="text-sm font-normal text-brand-lime ml-2">Wet Pouch</span></h4>
-                    <p class="text-slate-400 leading-relaxed">透氣防潑水收納袋。打完球後完美收納使用過的毛巾，拉上拉鍊，絕不弄濕你的寶貝球包。</p>
+                    <h4 class="text-xl font-bold text-white mb-3"><span data-i18n-en>Dedicated Wet Pouch</span><span data-i18n-zh>專屬濕巾收納袋</span></h4>
+                    <p class="text-slate-400 leading-relaxed"><span data-i18n-en>Breathable, water-resistant pouch. Stash your used towel after the match — zip it up and keep your bag dry.</span><span data-i18n-zh>透氣防潑水收納袋。打完球後完美收納使用過的毛巾，拉上拉鍊，絕不弄濕你的寶貝球包。</span></p>
                 </div>
                 <div class="bg-brand-navy p-8 rounded-2xl border border-white/5 hover:border-brand-lime/50 transition-colors group">
                     <div class="w-14 h-14 bg-brand-dark rounded-xl flex items-center justify-center mb-6 group-hover:bg-brand-lime transition-colors">
                         <i class="fa-solid fa-key text-2xl text-slate-300 group-hover:text-brand-dark transition-colors"></i>
                     </div>
-                    <h4 class="text-xl font-bold text-white mb-3">隱藏口袋 <span class="text-sm font-normal text-brand-lime ml-2">Hidden Pocket</span></h4>
-                    <p class="text-slate-400 leading-relaxed">毛巾上的小巧拉鍊口袋，安全放置你的鑰匙、戒指或置物櫃卡片。</p>
+                    <h4 class="text-xl font-bold text-white mb-3"><span data-i18n-en>Hidden Pocket</span><span data-i18n-zh>隱藏口袋</span></h4>
+                    <p class="text-slate-400 leading-relaxed"><span data-i18n-en>Discreet zippered pocket safely holds your keys, ring, or locker card.</span><span data-i18n-zh>毛巾上的小巧拉鍊口袋，安全放置你的鑰匙、戒指或置物櫃卡片。</span></p>
                 </div>
             </div>
 
             <div class="mt-16 flex flex-wrap justify-center gap-8 border-t border-white/10 pt-12">
                 <div class="flex items-center gap-3">
                     <i class="fa-solid fa-wind text-brand-lime text-xl"></i>
-                    <span class="text-white font-medium">快乾防臭 (Quick-Dry & Anti-Odor)</span>
+                    <span class="text-white font-medium"><span data-i18n-en>Quick-Dry & Anti-Odor</span><span data-i18n-zh>快乾防臭</span></span>
                 </div>
                 <div class="flex items-center gap-3">
                     <i class="fa-solid fa-leaf text-brand-lime text-xl"></i>
-                    <span class="text-white font-medium">柔軟親膚 (Ultra Soft & Skin-Friendly)</span>
+                    <span class="text-white font-medium"><span data-i18n-en>Ultra Soft & Skin-Friendly</span><span data-i18n-zh>柔軟親膚</span></span>
                 </div>
                 <div class="flex items-center gap-3">
                     <i class="fa-solid fa-recycle text-brand-lime text-xl"></i>
-                    <span class="text-white font-medium">機洗耐用 100+ 次</span>
+                    <span class="text-white font-medium"><span data-i18n-en>100+ Wash Durability</span><span data-i18n-zh>機洗耐用 100+ 次</span></span>
                 </div>
             </div>
         </div>
     </section>
 
+    <!-- SHOWCASE 3-grid -->
     <section class="py-24 bg-brand-navy">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16">
                 <h2 class="text-sm font-bold text-brand-lime tracking-widest uppercase mb-3">REAL COURT, REAL MOMENTS</h2>
-                <h3 class="text-4xl md:text-5xl font-black text-white">場上每一刻</h3>
+                <h3 class="text-4xl md:text-5xl font-black text-white"><span data-i18n-en>Every Moment on Court</span><span data-i18n-zh>場上每一刻</span></h3>
             </div>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
                 <div class="aspect-[3/4] product-shot rounded-2xl border border-white/10 overflow-hidden relative group">
                     <div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1626224583764-f87db24ac4ea?ixlib=rb-4.0.3&auto=format&fit=crop&w=900&q=80')] bg-cover bg-center opacity-40"></div>
                     <div class="absolute inset-0 flex items-end p-6">
                         <div class="bg-brand-dark/90 backdrop-blur-sm border-2 border-dashed border-brand-lime/50 rounded-xl p-5 w-full">
-                            <p class="text-brand-lime font-bold text-sm mb-1"><i class="fa-solid fa-camera"></i> 情境照 1</p>
-                            <p class="text-white font-bold">磁吸掛在鐵網（特寫）</p>
-                            <p class="text-xs text-slate-400 mt-2">毛巾透過內建磁鐵吸附在球場鐵網上，毛巾色 Lime Pop。背景模糊球場 + 球員身影。</p>
+                            <p class="text-brand-lime font-bold text-sm mb-1"><i class="fa-solid fa-camera"></i> <span data-i18n-en>Shot 1</span><span data-i18n-zh>情境照 1</span></p>
+                            <p class="text-white font-bold"><span data-i18n-en>Magnet snap on fence (close-up)</span><span data-i18n-zh>磁吸掛在鐵網（特寫）</span></p>
+                            <p class="text-xs text-slate-400 mt-2"><span data-i18n-en>Towel magnetically attached to court fence, Lime Pop color. Blurred court and players in background.</span><span data-i18n-zh>毛巾透過內建磁鐵吸附在球場鐵網上，毛巾色 Lime Pop。背景模糊球場 + 球員身影。</span></p>
                         </div>
                     </div>
                 </div>
@@ -304,9 +332,9 @@
                     <div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1659537020293-bb5dafef9fef?ixlib=rb-4.0.3&auto=format&fit=crop&w=900&q=80')] bg-cover bg-center opacity-40"></div>
                     <div class="absolute inset-0 flex items-end p-6">
                         <div class="bg-brand-dark/90 backdrop-blur-sm border-2 border-dashed border-brand-lime/50 rounded-xl p-5 w-full">
-                            <p class="text-brand-lime font-bold text-sm mb-1"><i class="fa-solid fa-camera"></i> 情境照 2</p>
-                            <p class="text-white font-bold">球員握毛巾擦汗（人像）</p>
-                            <p class="text-xs text-slate-400 mt-2">球員在 timeout 用毛巾防滑手感區擦掌心，露出 LOGO 與材質紋路。金色 hour 戶外光。</p>
+                            <p class="text-brand-lime font-bold text-sm mb-1"><i class="fa-solid fa-camera"></i> <span data-i18n-en>Shot 2</span><span data-i18n-zh>情境照 2</span></p>
+                            <p class="text-white font-bold"><span data-i18n-en>Player drying palm (portrait)</span><span data-i18n-zh>球員握毛巾擦汗（人像）</span></p>
+                            <p class="text-xs text-slate-400 mt-2"><span data-i18n-en>Player wipes palm with palm-dry corner during timeout. Logo and fabric texture visible. Golden hour outdoor light.</span><span data-i18n-zh>球員在 timeout 用毛巾防滑手感區擦掌心，露出 LOGO 與材質紋路。金色 hour 戶外光。</span></p>
                         </div>
                     </div>
                 </div>
@@ -314,9 +342,9 @@
                     <div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1517649763962-0c623066013b?ixlib=rb-4.0.3&auto=format&fit=crop&w=900&q=80')] bg-cover bg-center opacity-40"></div>
                     <div class="absolute inset-0 flex items-end p-6">
                         <div class="bg-brand-dark/90 backdrop-blur-sm border-2 border-dashed border-brand-lime/50 rounded-xl p-5 w-full">
-                            <p class="text-brand-lime font-bold text-sm mb-1"><i class="fa-solid fa-camera"></i> 情境照 3</p>
-                            <p class="text-white font-bold">收納袋 + 球包配置（俯拍）</p>
-                            <p class="text-xs text-slate-400 mt-2">毛巾、收納袋、球拍、球、水壺平鋪俯拍。乾燥場景，深色木紋桌面。</p>
+                            <p class="text-brand-lime font-bold text-sm mb-1"><i class="fa-solid fa-camera"></i> <span data-i18n-en>Shot 3</span><span data-i18n-zh>情境照 3</span></p>
+                            <p class="text-white font-bold"><span data-i18n-en>Pouch + bag flat-lay (overhead)</span><span data-i18n-zh>收納袋 + 球包配置（俯拍）</span></p>
+                            <p class="text-xs text-slate-400 mt-2"><span data-i18n-en>Towel, pouch, paddle, ball, water bottle in overhead flat-lay. Dry scene, dark wood-grain background.</span><span data-i18n-zh>毛巾、收納袋、球拍、球、水壺平鋪俯拍。乾燥場景，深色木紋桌面。</span></p>
                         </div>
                     </div>
                 </div>
@@ -324,11 +352,12 @@
         </div>
     </section>
 
+    <!-- SPECS -->
     <section id="specs" class="py-20 bg-brand-dark relative overflow-hidden">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="lg:flex items-center gap-16">
                 <div class="lg:w-1/2 mb-12 lg:mb-0">
-                    <h3 class="text-3xl font-bold text-white mb-8">更大的尺寸，更好的覆蓋。</h3>
+                    <h3 class="text-3xl font-bold text-white mb-8"><span data-i18n-en>Bigger size. Better coverage.</span><span data-i18n-zh>更大的尺寸，更好的覆蓋。</span></h3>
                     <div class="relative bg-brand-navy p-8 rounded-2xl border border-white/10 flex items-center justify-center">
                         <div class="w-full max-w-sm aspect-[2.25/1] bg-slate-200 rounded-md relative flex">
                             <div class="w-2/3 h-full bg-slate-200 rounded-l-md border-r border-slate-300"></div>
@@ -345,43 +374,43 @@
                         </div>
                     </div>
                     <ul class="mt-8 space-y-3 text-slate-300">
-                        <li class="flex items-center gap-3"><i class="fa-solid fa-circle-check text-brand-lime"></i> 材質：80% 聚酯纖維 + 20% 聚醯胺，吸水力 5x</li>
-                        <li class="flex items-center gap-3"><i class="fa-solid fa-circle-check text-brand-lime"></i> 重量：240g（含磁鐵）</li>
-                        <li class="flex items-center gap-3"><i class="fa-solid fa-circle-check text-brand-lime"></i> 磁吸力：N52 釹鐵硼磁鐵，可承重 1.2kg</li>
-                        <li class="flex items-center gap-3"><i class="fa-solid fa-circle-check text-brand-lime"></i> 機洗 100+ 次無損</li>
+                        <li class="flex items-center gap-3"><i class="fa-solid fa-circle-check text-brand-lime"></i> <span data-i18n-en>Material: 80% Polyester + 20% Polyamide, 5x absorbency</span><span data-i18n-zh>材質：80% 聚酯纖維 + 20% 聚醯胺，吸水力 5x</span></li>
+                        <li class="flex items-center gap-3"><i class="fa-solid fa-circle-check text-brand-lime"></i> <span data-i18n-en>Weight: 240g (with magnet)</span><span data-i18n-zh>重量：240g（含磁鐵）</span></li>
+                        <li class="flex items-center gap-3"><i class="fa-solid fa-circle-check text-brand-lime"></i> <span data-i18n-en>Magnet: N52 Neodymium, holds up to 1.2kg</span><span data-i18n-zh>磁吸力：N52 釹鐵硼磁鐵，可承重 1.2kg</span></li>
+                        <li class="flex items-center gap-3"><i class="fa-solid fa-circle-check text-brand-lime"></i> <span data-i18n-en>100+ wash cycles without damage</span><span data-i18n-zh>機洗 100+ 次無損</span></li>
                     </ul>
                 </div>
 
                 <div class="lg:w-1/2">
-                    <h3 class="text-3xl font-bold text-white mb-8">選擇你的戰鬥色彩</h3>
+                    <h3 class="text-3xl font-bold text-white mb-8"><span data-i18n-en>Pick your court color</span><span data-i18n-zh>選擇你的戰鬥色彩</span></h3>
                     <div class="grid grid-cols-2 sm:grid-cols-4 gap-6">
                         <div class="text-center">
                             <div class="w-16 h-16 rounded-full mx-auto bg-brand-lime border-4 border-brand-dark shadow-[0_0_0_2px_rgba(255,255,255,0.2)] mb-3"></div>
                             <p class="text-sm font-bold text-white">LIME POP</p>
-                            <p class="text-xs text-slate-500">萊姆綠</p>
+                            <p class="text-xs text-slate-500"><span data-i18n-en>Signature</span><span data-i18n-zh>萊姆綠</span></p>
                         </div>
                         <div class="text-center">
                             <div class="w-16 h-16 rounded-full mx-auto bg-brand-coral border-4 border-brand-dark shadow-[0_0_0_2px_rgba(255,255,255,0.2)] mb-3"></div>
                             <p class="text-sm font-bold text-white">CORAL POP</p>
-                            <p class="text-xs text-slate-500">珊瑚紅</p>
+                            <p class="text-xs text-slate-500"><span data-i18n-en>Bold</span><span data-i18n-zh>珊瑚紅</span></p>
                         </div>
                         <div class="text-center">
                             <div class="w-16 h-16 rounded-full mx-auto bg-brand-ocean border-4 border-brand-dark shadow-[0_0_0_2px_rgba(255,255,255,0.2)] mb-3"></div>
                             <p class="text-sm font-bold text-white">OCEAN BLUE</p>
-                            <p class="text-xs text-slate-500">海洋藍</p>
+                            <p class="text-xs text-slate-500"><span data-i18n-en>Classic</span><span data-i18n-zh>海洋藍</span></p>
                         </div>
                         <div class="text-center">
                             <div class="w-16 h-16 rounded-full mx-auto bg-brand-graphite border-4 border-brand-dark shadow-[0_0_0_2px_rgba(255,255,255,0.2)] mb-3"></div>
                             <p class="text-sm font-bold text-white">GRAPHITE</p>
-                            <p class="text-xs text-slate-500">石墨灰</p>
+                            <p class="text-xs text-slate-500"><span data-i18n-en>Stealth</span><span data-i18n-zh>石墨灰</span></p>
                         </div>
                     </div>
                     <div class="mt-8 aspect-[3/2] product-shot rounded-2xl border border-white/10 overflow-hidden relative">
                         <div class="absolute inset-0 flex items-center justify-center p-6">
                             <div class="bg-brand-dark/80 backdrop-blur-sm border-2 border-dashed border-brand-lime/50 rounded-xl p-5 max-w-md text-center">
                                 <i class="fa-solid fa-palette text-3xl text-brand-lime mb-2"></i>
-                                <p class="text-white font-bold">4 色 Lineup 平拍</p>
-                                <p class="text-xs text-slate-400 mt-2">4 色毛巾平鋪排列俯拍。背景深色木紋。每色標籤標示色名。建議 1600×1067 px。</p>
+                                <p class="text-white font-bold"><span data-i18n-en>4-Color Lineup Flat-Lay</span><span data-i18n-zh>4 色 Lineup 平拍</span></p>
+                                <p class="text-xs text-slate-400 mt-2"><span data-i18n-en>4 towels in overhead flat-lay. Dark wood-grain background. Each color labeled. 1600×1067 px.</span><span data-i18n-zh>4 色毛巾平鋪排列俯拍。深色木紋。每色標籤標示色名。1600×1067 px。</span></p>
                             </div>
                         </div>
                     </div>
@@ -390,23 +419,24 @@
         </div>
     </section>
 
+    <!-- TESTIMONIALS -->
     <section class="py-24 bg-brand-navy">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16">
                 <h2 class="text-sm font-bold text-brand-lime tracking-widest uppercase mb-3">FROM THE COURT</h2>
-                <h3 class="text-4xl md:text-5xl font-black text-white">玩家見證</h3>
+                <h3 class="text-4xl md:text-5xl font-black text-white"><span data-i18n-en>Player Reviews</span><span data-i18n-zh>玩家見證</span></h3>
             </div>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
                 <div class="bg-brand-dark p-8 rounded-2xl border border-white/5">
                     <div class="flex text-brand-lime mb-4">
                         <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
                     </div>
-                    <p class="text-slate-300 leading-relaxed mb-6">「磁吸真的太天才了，再也不用毛巾放地上沾灰塵。打 3-4 小時 timeout 隨手抓，握感變更穩。」</p>
+                    <p class="text-slate-300 leading-relaxed mb-6"><span data-i18n-en>"The magnet is brilliant. No more towel on the dusty floor. After 3-4 hours of play, I can grab it instantly during timeouts. My grip feels way more confident."</span><span data-i18n-zh>「磁吸真的太天才了，再也不用毛巾放地上沾灰塵。打 3-4 小時 timeout 隨手抓，握感變更穩。」</span></p>
                     <div class="flex items-center gap-3">
                         <div class="w-12 h-12 rounded-full bg-brand-lime/20 flex items-center justify-center text-brand-lime font-bold">A</div>
                         <div>
                             <p class="text-white font-bold text-sm">Alex T.</p>
-                            <p class="text-xs text-slate-500">DUPR 4.5 / 俱樂部成員</p>
+                            <p class="text-xs text-slate-500"><span data-i18n-en>DUPR 4.5 / Club Player</span><span data-i18n-zh>DUPR 4.5 / 俱樂部成員</span></p>
                         </div>
                     </div>
                 </div>
@@ -414,12 +444,12 @@
                     <div class="flex text-brand-lime mb-4">
                         <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
                     </div>
-                    <p class="text-slate-300 leading-relaxed mb-6">「打完雙打四人份汗濕毛巾分裝，濕巾收納袋是救星，球包整理完全乾燥。」</p>
+                    <p class="text-slate-300 leading-relaxed mb-6"><span data-i18n-en>"After doubles, four sweaty towels need somewhere to go. The wet pouch is a lifesaver — my bag stays bone dry."</span><span data-i18n-zh>「打完雙打四人份汗濕毛巾分裝，濕巾收納袋是救星，球包整理完全乾燥。」</span></p>
                     <div class="flex items-center gap-3">
                         <div class="w-12 h-12 rounded-full bg-brand-coral/20 flex items-center justify-center text-brand-coral font-bold">M</div>
                         <div>
                             <p class="text-white font-bold text-sm">Mia L.</p>
-                            <p class="text-xs text-slate-500">錦標賽選手 / 紐約</p>
+                            <p class="text-xs text-slate-500"><span data-i18n-en>Tournament Player / NYC</span><span data-i18n-zh>錦標賽選手 / 紐約</span></p>
                         </div>
                     </div>
                 </div>
@@ -427,12 +457,12 @@
                     <div class="flex text-brand-lime mb-4">
                         <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
                     </div>
-                    <p class="text-slate-300 leading-relaxed mb-6">「掛扣設計超實用，可以扣在腰帶切換場地。隱藏口袋放車鑰匙完美。」</p>
+                    <p class="text-slate-300 leading-relaxed mb-6"><span data-i18n-en>"The clip is genius for switching courts — I just hook it on my belt. The hidden pocket holds my car key perfectly."</span><span data-i18n-zh>「掛扣設計超實用，可以扣在腰帶切換場地。隱藏口袋放車鑰匙完美。」</span></p>
                     <div class="flex items-center gap-3">
                         <div class="w-12 h-12 rounded-full bg-brand-ocean/20 flex items-center justify-center text-brand-ocean font-bold">J</div>
                         <div>
                             <p class="text-white font-bold text-sm">Jordan K.</p>
-                            <p class="text-xs text-slate-500">教練 / 加州</p>
+                            <p class="text-xs text-slate-500"><span data-i18n-en>Coach / California</span><span data-i18n-zh>教練 / 加州</span></p>
                         </div>
                     </div>
                 </div>
@@ -440,76 +470,79 @@
         </div>
     </section>
 
+    <!-- FAQ -->
     <section id="faq" class="py-24 bg-brand-dark">
         <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16">
                 <h2 class="text-sm font-bold text-brand-lime tracking-widest uppercase mb-3">FAQ</h2>
-                <h3 class="text-4xl md:text-5xl font-black text-white">常見問題</h3>
+                <h3 class="text-4xl md:text-5xl font-black text-white"><span data-i18n-en>Frequently Asked</span><span data-i18n-zh>常見問題</span></h3>
             </div>
             <div class="space-y-4">
                 <details class="bg-brand-navy rounded-2xl border border-white/5 p-6 group">
                     <summary class="flex items-center justify-between cursor-pointer text-white font-bold text-lg">
-                        <span>Kickstarter 何時開始？早鳥折扣多少？</span>
+                        <span><span data-i18n-en>When does Kickstarter launch? How much is the early bird?</span><span data-i18n-zh>Kickstarter 何時開始？早鳥折扣多少？</span></span>
                         <i class="fa-solid fa-chevron-down faq-icon text-brand-lime"></i>
                     </summary>
-                    <p class="mt-4 text-slate-400 leading-relaxed">Kickstarter 募資專案預計於 <strong class="text-brand-lime">2026 年 Q3</strong> 上線。訂閱 Email 名單者可獲得專屬連結 + 限量 <strong class="text-brand-lime">50% 超早鳥</strong> 優惠（僅前 500 名）。</p>
+                    <p class="mt-4 text-slate-400 leading-relaxed"><span data-i18n-en>Kickstarter launches <strong class="text-brand-lime">Q3 2026</strong>. Email list subscribers get an exclusive link plus a <strong class="text-brand-lime">50% Super Early Bird</strong> discount — limited to the first 500 backers.</span><span data-i18n-zh>Kickstarter 募資預計 <strong class="text-brand-lime">2026 Q3</strong> 上線。訂閱 Email 名單者獲專屬連結 + <strong class="text-brand-lime">50% 超早鳥</strong> 優惠（前 500 名）。</span></p>
                 </details>
                 <details class="bg-brand-navy rounded-2xl border border-white/5 p-6 group">
                     <summary class="flex items-center justify-between cursor-pointer text-white font-bold text-lg">
-                        <span>磁鐵會不會影響電子設備或信用卡？</span>
+                        <span><span data-i18n-en>Will the magnet affect my phone or credit cards?</span><span data-i18n-zh>磁鐵會不會影響電子設備或信用卡？</span></span>
                         <i class="fa-solid fa-chevron-down faq-icon text-brand-lime"></i>
                     </summary>
-                    <p class="mt-4 text-slate-400 leading-relaxed">不會。N52 釹鐵硼磁鐵專為 <strong class="text-white">短距離吸附</strong> 設計，距離手機或信用卡 5 cm 以上即無干擾。通過 FCC + CE 測試。</p>
+                    <p class="mt-4 text-slate-400 leading-relaxed"><span data-i18n-en>No. The N52 Neodymium magnet is engineered for <strong class="text-white">short-distance hold</strong>. At 5 cm or more from your phone or cards, there's zero interference. FCC + CE certified.</span><span data-i18n-zh>不會。N52 釹鐵硼磁鐵專為 <strong class="text-white">短距離吸附</strong> 設計，距離手機或信用卡 5 cm 以上即無干擾。通過 FCC + CE 測試。</span></p>
                 </details>
                 <details class="bg-brand-navy rounded-2xl border border-white/5 p-6 group">
                     <summary class="flex items-center justify-between cursor-pointer text-white font-bold text-lg">
-                        <span>吸水力如何？跟一般運動毛巾差別？</span>
+                        <span><span data-i18n-en>How absorbent is it compared to a regular sports towel?</span><span data-i18n-zh>吸水力如何？跟一般運動毛巾差別？</span></span>
                         <i class="fa-solid fa-chevron-down faq-icon text-brand-lime"></i>
                     </summary>
-                    <p class="mt-4 text-slate-400 leading-relaxed">80% 聚酯 + 20% 聚醯胺超細纖維，吸水力是純棉毛巾 <strong class="text-brand-lime">5 倍</strong>，乾燥速度快 3 倍。手感角落特別加密。</p>
+                    <p class="mt-4 text-slate-400 leading-relaxed"><span data-i18n-en>80% Polyester + 20% Polyamide microfiber — absorbs <strong class="text-brand-lime">5x more</strong> than cotton and dries 3x faster. The palm corner is reinforced for instant grip dry.</span><span data-i18n-zh>80% 聚酯 + 20% 聚醯胺超細纖維，吸水力是純棉毛巾 <strong class="text-brand-lime">5 倍</strong>，乾燥速度快 3 倍。手感角落特別加密。</span></p>
                 </details>
                 <details class="bg-brand-navy rounded-2xl border border-white/5 p-6 group">
                     <summary class="flex items-center justify-between cursor-pointer text-white font-bold text-lg">
-                        <span>可以機洗嗎？保固多久？</span>
+                        <span><span data-i18n-en>Machine washable? Warranty?</span><span data-i18n-zh>可以機洗嗎？保固多久？</span></span>
                         <i class="fa-solid fa-chevron-down faq-icon text-brand-lime"></i>
                     </summary>
-                    <p class="mt-4 text-slate-400 leading-relaxed">可以。建議冷水 + 中性洗劑 + 不漂白。實驗室測試機洗 <strong class="text-brand-lime">100+ 次</strong> 無掉色。磁鐵密封防銹。保固 <strong class="text-brand-lime">365 天</strong>。</p>
+                    <p class="mt-4 text-slate-400 leading-relaxed"><span data-i18n-en>Yes. Cold water, mild detergent, no bleach. Lab-tested <strong class="text-brand-lime">100+ wash cycles</strong> with no fading. Magnet sealed against rust. <strong class="text-brand-lime">365-day</strong> warranty.</span><span data-i18n-zh>可以。冷水 + 中性洗劑 + 不漂白。實驗室測試機洗 <strong class="text-brand-lime">100+ 次</strong> 無掉色。磁鐵密封防銹。保固 <strong class="text-brand-lime">365 天</strong>。</span></p>
                 </details>
                 <details class="bg-brand-navy rounded-2xl border border-white/5 p-6 group">
                     <summary class="flex items-center justify-between cursor-pointer text-white font-bold text-lg">
-                        <span>磁吸可以吸什麼材質的鐵網？</span>
+                        <span><span data-i18n-en>What fences can the magnet attach to?</span><span data-i18n-zh>磁吸可以吸什麼材質的鐵網？</span></span>
                         <i class="fa-solid fa-chevron-down faq-icon text-brand-lime"></i>
                     </summary>
-                    <p class="mt-4 text-slate-400 leading-relaxed">標準 Pickleball / Tennis 球場鐵網（鋼絲圍籬）都能吸。任何含鐵 / 鋼材質均可。鋁、不鏽鋼（非磁性）、塑膠網無法吸 — 此時改用掛扣。</p>
+                    <p class="mt-4 text-slate-400 leading-relaxed"><span data-i18n-en>Standard pickleball / tennis court fences (steel chain-link) all work. Any ferrous metal. Aluminum, non-magnetic stainless, plastic mesh won't — use the clip instead.</span><span data-i18n-zh>標準 Pickleball / Tennis 球場鐵網（鋼絲圍籬）都能吸。任何含鐵 / 鋼材質均可。鋁、不鏽鋼（非磁性）、塑膠網無法吸 — 用掛扣即可。</span></p>
                 </details>
                 <details class="bg-brand-navy rounded-2xl border border-white/5 p-6 group">
                     <summary class="flex items-center justify-between cursor-pointer text-white font-bold text-lg">
-                        <span>會運送到台灣 / 海外嗎？</span>
+                        <span><span data-i18n-en>Do you ship internationally?</span><span data-i18n-zh>會運送到台灣 / 海外嗎？</span></span>
                         <i class="fa-solid fa-chevron-down faq-icon text-brand-lime"></i>
                     </summary>
-                    <p class="mt-4 text-slate-400 leading-relaxed">會。台灣 / 美國 / 歐洲 / 日本 / 澳洲 全部支援，運費於 Kickstarter 募資頁明列。</p>
+                    <p class="mt-4 text-slate-400 leading-relaxed"><span data-i18n-en>Yes. We ship to US, Canada, Europe, Japan, Australia, Taiwan, and more. Shipping rates listed on the Kickstarter page.</span><span data-i18n-zh>會。美國 / 加拿大 / 歐洲 / 日本 / 澳洲 / 台灣 全部支援，運費於 Kickstarter 募資頁明列。</span></p>
                 </details>
             </div>
         </div>
     </section>
 
+    <!-- KICKSTARTER CTA -->
     <section id="kickstarter" class="py-24 relative overflow-hidden bg-brand-dark">
         <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-3xl h-64 bg-brand-lime/5 blur-[100px] rounded-full pointer-events-none"></div>
 
         <div class="max-w-4xl mx-auto px-4 text-center relative z-10">
             <i class="fa-brands fa-kickstarter text-6xl text-brand-lime mb-6"></i>
-            <h2 class="text-4xl md:text-5xl font-black text-white mb-6">即將在 Kickstarter 掀起旋風</h2>
+            <h2 class="text-4xl md:text-5xl font-black text-white mb-6"><span data-i18n-en>Soon on Kickstarter</span><span data-i18n-zh>即將在 Kickstarter 掀起旋風</span></h2>
             <p class="text-xl text-slate-400 mb-10">
-                加入我們的 VIP 名單。在募資專案上線的第一天，您將獲得專屬的 <span class="text-brand-lime font-bold">限量超早鳥 50% 折扣</span>。
+                <span data-i18n-en>Join the VIP list. On launch day, get our exclusive <span class="text-brand-lime font-bold">Limited Super Early Bird 50% off</span>.</span>
+                <span data-i18n-zh>加入我們的 VIP 名單。募資專案上線第一天獲得 <span class="text-brand-lime font-bold">限量超早鳥 50% 折扣</span>。</span>
             </p>
 
             <form class="max-w-md mx-auto flex flex-col gap-4" data-form="kickstarter">
-                <input type="text" placeholder="您的名字" class="w-full bg-brand-navy border border-slate-700 rounded-xl px-5 py-4 text-white focus:outline-none focus:border-brand-lime focus:ring-1 focus:ring-brand-lime transition-all">
-                <input type="email" placeholder="您的電子郵件地址" required class="w-full bg-brand-navy border border-slate-700 rounded-xl px-5 py-4 text-white focus:outline-none focus:border-brand-lime focus:ring-1 focus:ring-brand-lime transition-all">
+                <input type="text" class="w-full bg-brand-navy border border-slate-700 rounded-xl px-5 py-4 text-white focus:outline-none focus:border-brand-lime focus:ring-1 focus:ring-brand-lime transition-all" data-i18n-placeholder-en="Your name" data-i18n-placeholder-zh="您的名字">
+                <input type="email" required class="w-full bg-brand-navy border border-slate-700 rounded-xl px-5 py-4 text-white focus:outline-none focus:border-brand-lime focus:ring-1 focus:ring-brand-lime transition-all" data-i18n-placeholder-en="Your email address" data-i18n-placeholder-zh="您的電子郵件地址">
                 <button type="submit" class="w-full bg-brand-lime text-brand-dark font-black text-lg py-4 rounded-xl hover:bg-white transition-all transform hover:scale-[1.02] shadow-[0_10px_25px_rgba(212,237,49,0.2)] mt-2">
-                    立即鎖定早鳥優惠
+                    <span data-i18n-en>Lock In Early Bird</span><span data-i18n-zh>立即鎖定早鳥優惠</span>
                 </button>
-                <p class="text-xs text-slate-500 mt-2"><i class="fa-solid fa-lock text-slate-600 mr-1"></i> 我們尊重您的隱私，絕不發送垃圾郵件。</p>
+                <p class="text-xs text-slate-500 mt-2"><i class="fa-solid fa-lock text-slate-600 mr-1"></i> <span data-i18n-en>We respect your privacy. No spam, ever.</span><span data-i18n-zh>我們尊重您的隱私，絕不發送垃圾郵件。</span></p>
             </form>
         </div>
     </section>
@@ -528,17 +561,42 @@
                 <a href="#" aria-label="YouTube" class="hover:text-brand-lime transition-colors"><i class="fa-brands fa-youtube text-xl"></i></a>
             </div>
             <div class="text-slate-500 text-sm text-center md:text-right">
-                &copy; 2026 Courtform. All rights reserved. <br class="md:hidden">Designed for Pickleball. Built for Performance.
+                &copy; 2026 Courtform. <span data-i18n-en>All rights reserved.</span><span data-i18n-zh>版權所有。</span><br class="md:hidden"><span data-i18n-en> Designed for Pickleball. Built for Performance.</span><span data-i18n-zh> 為球場而生。為每一分準備。</span>
             </div>
         </div>
     </footer>
 
     <script>
+        function setLang(lang) {
+            document.documentElement.lang = lang;
+            localStorage.setItem('lang', lang);
+            document.querySelectorAll('.lang-btn').forEach(btn => {
+                btn.classList.toggle('active', btn.dataset.lang === lang);
+            });
+            // Update placeholders
+            document.querySelectorAll('[data-i18n-placeholder-en]').forEach(el => {
+                el.placeholder = lang === 'en' ? el.dataset.i18nPlaceholderEn : el.dataset.i18nPlaceholderZh;
+            });
+        }
+
+        // Init: read saved lang or detect from browser, default EN
+        (function() {
+            const saved = localStorage.getItem('lang');
+            const browser = (navigator.language || 'en').toLowerCase();
+            const lang = saved || (browser.startsWith('zh') ? 'zh-TW' : 'en');
+            setLang(lang);
+        })();
+
+        // Form handler
         document.querySelectorAll('form').forEach(form => {
             form.addEventListener('submit', (e) => {
                 e.preventDefault();
                 const email = form.querySelector('input[type="email"]').value;
-                alert('感謝您的訂閱 ' + email + '！我們會在 Kickstarter 上線當天通知您。');
+                const lang = document.documentElement.lang;
+                const msg = lang === 'en'
+                    ? `Thanks for subscribing ${email}! We'll notify you on Kickstarter launch day.`
+                    : `感謝您的訂閱 ${email}！我們會在 Kickstarter 上線當天通知您。`;
+                alert(msg);
                 form.reset();
             });
         });
